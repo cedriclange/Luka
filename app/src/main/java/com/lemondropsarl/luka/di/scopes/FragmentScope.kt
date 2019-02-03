@@ -1,4 +1,9 @@
 package com.lemondropsarl.luka.di.scopes
 
-class FragmentScope {
+import javax.inject.Scope
+
+@Scope
+@Retention(AnnotationRetention.RUNTIME)
+@MustBeDocumented
+annotation class FragmentScope {
 }

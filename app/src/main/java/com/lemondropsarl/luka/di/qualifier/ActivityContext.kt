@@ -1,4 +1,9 @@
 package com.lemondropsarl.luka.di.qualifier
 
-class ActivityContext {
+import javax.inject.Qualifier
+
+@Qualifier
+@Retention(AnnotationRetention.RUNTIME)
+@MustBeDocumented
+annotation class ActivityContext {
 }
