@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:tools="http://schemas.android.com/tools"
+      tools:showIn="navigation_view">
+    <group android:checkableBehavior="single">
+
+        <item android:id="@+id/nav_dasboard"
+              android:icon="@drawable/ic_dashboard"
+              android:title="@string/Dashboard"/>
+        <item android:id="@+id/nav_feeds"
+              android:icon="@drawable/ic_feed"
+              android:title="@string/Feed"/>
+        <item android:id="@+id/nav_post"
+              android:icon="@drawable/ic_post"
+              android:title="@string/my_posts"/>
+    </group>
+    <item android:title="@string/help_support">
+        <menu>
+            <item
+                    android:id="@+id/action_feedback"
+                    android:title="@string/feedback"
+                    android:icon="@drawable/ic_feedback"/>
+            <item android:id="@+id/sign_out"
+                  android:title="@string/sign_out"
+                  android:icon="@drawable/ic_quit"/>
+
+        </menu>
+    </item>
+</menu>

@@ -8,6 +8,7 @@ import com.lemondropsarl.luka.di.qualifier.ApplicationContext
 import com.lemondropsarl.luka.ui.ActivitiesModule
 import dagger.Binds
 import dagger.Module
+import dagger.android.AndroidInjectionModule
 import dagger.android.support.AndroidSupportInjectionModule
 import javax.inject.Singleton
 

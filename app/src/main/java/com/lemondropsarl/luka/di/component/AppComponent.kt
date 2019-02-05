@@ -4,6 +4,7 @@ import com.lemondropsarl.luka.LukaApplication
 import com.lemondropsarl.luka.di.module.AppModule
 import dagger.BindsInstance
 import dagger.Component
+import dagger.android.AndroidInjectionModule
 import dagger.android.AndroidInjector
 import javax.inject.Singleton
 

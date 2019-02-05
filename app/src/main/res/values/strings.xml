@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">Luka</string>
+    <string name="Dashboard">Acceuil</string>
+    <string name="Feed">Feed</string>
+    <string name="my_posts">Mes postes</string>
+    <string name="help_support"><![CDATA[Aide & Support]]></string>
+    <string name="feedback">Feedback</string>
+    <string name="sign_out">Quitter</string>
+    <string name="header_email">Email</string>
+    <string name="header_Username">Nom d\'utilisateur</string>
+    <string name="picture">image profile</string>
 </resources>
