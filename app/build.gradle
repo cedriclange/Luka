@@ -2,7 +2,8 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-kapt'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
-
+apply plugin: 'com.jakewharton.butterknife'
+apply plugin: 'androidx.navigation.safeargs'
 android {
     compileSdkVersion 28
     defaultConfig {
@@ -20,9 +21,7 @@ android {
         }
     }
 
-    dataBinding{
-        enabled = true
-    }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
@@ -31,7 +30,9 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation"org.jetbrains.kotlin:kotlin-stdlib-jdk7:$versions.kotlin"
+    implementation"org.jetbrains.kotlin:kotlin-stdlib-jdk8:$versions.kotlin"
+    //kapt "androidx.databinding:databinding-compiler:3.3.1"
+
 
     //android
     implementation "androidx.core:core-ktx:$versions.core_ktx"
@@ -40,7 +41,18 @@ dependencies {
     implementation "com.google.android.material:material:$versions.material"
     implementation "androidx.lifecycle:lifecycle-extensions:$versions.lifecycle"
     kapt "androidx.lifecycle:lifecycle-compiler:$versions.lifecycle"
+    implementation "androidx.paging:paging-runtime-ktx:$versions.paging"
+    implementation  "android.arch.navigation:navigation-fragment-ktx:$versions.navigation"
+    implementation  "android.arch.navigation:navigation-ui-ktx:$versions.navigation"
+    //implementation "android.arch.navigation:navigation-runtime-ktx:$versions.navigation"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$versions.coroutine"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$versions.coroutine"
     implementation "androidx.legacy:legacy-support-v4:$versions.legacy_support"
+    //kapt "com.android.databinding:compiler:3.2.1"
+
+    //butterKnife
+    implementation "com.jakewharton:butterknife:$versions.butterknife"
+    kapt "com.jakewharton:butterknife-compiler:$versions.butterknife"
 
     //dagger
     implementation "com.google.dagger:dagger:$versions.dagger"
@@ -49,7 +61,22 @@ dependencies {
     kapt "com.google.dagger:dagger-compiler:$versions.dagger"
     kapt "com.google.dagger:dagger-android-processor:$versions.dagger"
 
+    //firebase
+    implementation "com.google.firebase:firebase-core:$versions.firebase_core"
+    implementation "com.google.firebase:firebase-auth:$versions.firebase_auth"
+    implementation 'com.google.android.gms:play-services-auth:16.0.1'
+    implementation 'com.google.android.gms:play-services-measurement-api:16.0.4'
+    implementation "com.firebaseui:firebase-ui-auth:$versions.firebaseUI"
+    implementation "com.firebaseui:firebase-ui-firestore:$versions.firebaseUI"
+    implementation "com.firebaseui:firebase-ui-storage:$versions.firebaseUI"
+
+    //image glide
+    implementation "com.github.bumptech.glide:glide:$versions.glide"
+    kapt "com.github.bumptech.glide:compiler:$versions.glide"
+
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.1.2-alpha01'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.2-alpha01'
 }
+
+apply plugin: 'com.google.gms.google-services'

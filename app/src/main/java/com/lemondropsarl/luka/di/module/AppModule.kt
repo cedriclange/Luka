@@ -6,14 +6,17 @@ import android.content.Context
 import com.lemondropsarl.luka.LukaApplication
 import com.lemondropsarl.luka.di.qualifier.ApplicationContext
 import com.lemondropsarl.luka.ui.ActivitiesModule
+import com.lemondropsarl.luka.ui.viewmodel.ViewModelModule
 import dagger.Binds
 import dagger.Module
-import dagger.android.AndroidInjectionModule
 import dagger.android.support.AndroidSupportInjectionModule
 import javax.inject.Singleton
 
-@Module(includes = [AndroidSupportInjectionModule::class,
-                ActivitiesModule::class] )
+@Module(
+    includes = [
+        ActivitiesModule::class, ViewModelModule::class,
+        FirebaseModule::class]
+)
 abstract class AppModule {
 
     @Binds

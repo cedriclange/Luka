@@ -1,16 +1,46 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.MaterialComponents.Light.DarkActionBar">
+    <style name="BaseTheme" parent="Theme.MaterialComponents.Light.DarkActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
+
+    <style name="AppTheme" parent="BaseTheme"></style>
     <style name="AppTheme.NoActionBar" parent="AppTheme">
         <item name="windowNoTitle">true</item>
         <item name="windowActionBar">false</item>
         <item name="android:statusBarColor">@android:color/transparent</item>
+    </style>
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.MaterialComponents.Dark.ActionBar"/>
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.MaterialComponents.Light"/>
+
+    <style name="AppTheme.Text">
+        <item name="android:fontFamily">sans-serif</item>
+    </style>
+    <style name="AppTheme.FeedText" parent="AppTheme.Text">
+
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+    <style name="AppTheme.Headline" parent="AppTheme.FeedText">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:textAppearance">TextAppearance.MaterialComponents.Headline1</item>
+    </style>
+    <style name="AppTheme.Subtitle" parent="AppTheme.FeedText">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textAppearance">@style/TextAppearance.MaterialComponents.Subtitle1</item>
+
+
+    </style>
+    <style name="AppTheme.Caption" parent="AppTheme.FeedText">
+        <item name="textAppearanceCaption">@style/TextAppearance.MaterialComponents.Caption</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:textStyle">italic</item>
+
     </style>
 
 </resources>

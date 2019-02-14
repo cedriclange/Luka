@@ -9,7 +9,7 @@ import dagger.android.AndroidInjector
 import javax.inject.Singleton
 
 @Singleton
-@Component(modules = [AppModule::class])
+@Component(modules = [AppModule::class, AndroidInjectionModule::class])
 interface AppComponent : AndroidInjector<LukaApplication> {
     @Component.Builder
     interface Builder{
@@ -19,4 +19,6 @@ interface AppComponent : AndroidInjector<LukaApplication> {
 
         fun build() : AppComponent
     }
+
+
 }

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/graph_main"
+            app:startDestination="@id/FeedListFragment">
+
+    <fragment android:id="@+id/FeedListFragment"
+              android:name="com.lemondropsarl.luka.ui.main.feed.FeedListFragment"
+              android:label="@string/Feed"
+              tools:layout="@layout/feed_list_fragment"/>
+
+    <fragment android:id="@+id/FeedDetailFragment"
+              android:name="com.lemondropsarl.luka.ui.main.feed.FeedDetailFragment"
+              android:label="@string/feed_detail"
+              tools:layout="@layout/feed_detail_fragment"/>
+
+    <fragment android:name="com.lemondropsarl.luka.ui.main.home.HomeFragment"
+              android:id="@+id/HomeFragment"
+              android:label="Home"
+              tools:layout="@layout/fragment_home"/>
+
+
+</navigation>

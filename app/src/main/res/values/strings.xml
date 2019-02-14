@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Luka</string>
+    <string name="app_name">Luka Ndako</string>
     <string name="Dashboard">Acceuil</string>
     <string name="Feed">Feed</string>
     <string name="my_posts">Mes postes</string>
@@ -9,4 +9,18 @@
     <string name="header_email">Email</string>
     <string name="header_Username">Nom d\'utilisateur</string>
     <string name="picture">image profile</string>
+    <string name="open_drawer">open drawer</string>
+    <string name="close_drawer">close drawer</string>
+    <string name="feed_detail">Details du feed</string>
+    <string name="feed_detail_image">feed image detail</string>
+    <string name="feed_author">auteur:</string>
+    <string name="feed_town">Ville</string>
+    <string name="feed_area">Commune</string>
+    <string name="divider_bullet">•</string>
+    <string name="feed_title">Titre</string>
+    <string name="feed_number_room">Nombre de pièce :</string>
+    <string name="feed_room">Room</string>
+    <string name="feed_price">Prix</string>
+    <string name="feed_guaranty">Garantie :</string>
+    <string name="specification">Specification</string>
 </resources>
