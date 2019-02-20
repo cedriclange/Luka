@@ -8,12 +8,20 @@
     <fragment android:id="@+id/FeedListFragment"
               android:name="com.lemondropsarl.luka.ui.main.feed.FeedListFragment"
               android:label="@string/Feed"
-              tools:layout="@layout/feed_list_fragment"/>
+              tools:layout="@layout/feed_list_fragment">
+        <action android:id="@+id/detail"
+                app:destination="@id/FeedDetailFragment"
+                app:enterAnim="@anim/nav_default_enter_anim"
+                app:exitAnim="@anim/nav_default_exit_anim"/>
+    </fragment>
 
     <fragment android:id="@+id/FeedDetailFragment"
               android:name="com.lemondropsarl.luka.ui.main.feed.FeedDetailFragment"
               android:label="@string/feed_detail"
-              tools:layout="@layout/feed_detail_fragment"/>
+              tools:layout="@layout/feed_detail_fragment">
+        <argument android:name="feedId" app:argType="string"/>
+        />
+    </fragment>
 
     <fragment android:name="com.lemondropsarl.luka.ui.main.home.HomeFragment"
               android:id="@+id/HomeFragment"

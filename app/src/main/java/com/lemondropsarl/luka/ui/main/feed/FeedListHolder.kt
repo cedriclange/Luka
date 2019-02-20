@@ -32,7 +32,7 @@ class FeedListHolder constructor(
         itemView.textForfeedPrice.text = post.price.toString()
 
         GlideApp.with(itemView.feedImage.context)
-            .load(post.postUrl)
+            .load(post.photoUrl)
             .into(itemView.feedImage)
 
 

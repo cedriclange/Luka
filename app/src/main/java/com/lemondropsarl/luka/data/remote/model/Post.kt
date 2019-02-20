@@ -5,13 +5,14 @@ import java.util.*
 
 data class Post(
     var title: String = "",
-    var town: String = "",
+    var city: String = "",
     var area: String = "",
     var rooms: Int = 0,
     var price: Double = 0.0,
-    var garantie: Double = 0.0,
-    var postUrl: String = "",
+    var guaranty: Double = 0.0,
+    var photoUrl: String = "",
     var specification: String = "",
+    var author: String = "",
     @ServerTimestamp
     var createdAt: Date? = null
 )

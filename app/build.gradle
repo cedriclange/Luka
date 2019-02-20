@@ -44,7 +44,7 @@ dependencies {
     implementation "androidx.paging:paging-runtime-ktx:$versions.paging"
     implementation  "android.arch.navigation:navigation-fragment-ktx:$versions.navigation"
     implementation  "android.arch.navigation:navigation-ui-ktx:$versions.navigation"
-    //implementation "android.arch.navigation:navigation-runtime-ktx:$versions.navigation"
+    //implementation "android.arch.navigation:navigation-safe-args-gradle-plugin:$versions.navigation"
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$versions.coroutine"
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$versions.coroutine"
     implementation "androidx.legacy:legacy-support-v4:$versions.legacy_support"

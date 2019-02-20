@@ -28,7 +28,7 @@
         <item name="android:textSize">20sp</item>
         <item name="android:textStyle">bold</item>
         <item name="android:fontFamily">sans-serif-medium</item>
-        <item name="android:textAppearance">TextAppearance.MaterialComponents.Headline1</item>
+        <item name="android:textAppearance">@style/TextAppearance.MaterialComponents.Headline1</item>
     </style>
     <style name="AppTheme.Subtitle" parent="AppTheme.FeedText">
         <item name="android:textSize">14sp</item>

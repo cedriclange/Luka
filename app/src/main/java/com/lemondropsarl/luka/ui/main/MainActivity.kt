@@ -5,16 +5,15 @@ import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.view.MenuItem
-import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import androidx.navigation.ui.AppBarConfiguration
+import androidx.navigation.ui.NavigationUI
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
-import androidx.navigation.ui.setupWithNavController
 import com.bumptech.glide.Glide
 import com.firebase.ui.auth.AuthUI
 import com.google.android.material.navigation.NavigationView
@@ -115,41 +114,43 @@ class MainActivity : AppCompatActivity(), HasSupportFragmentInjector, Navigation
 
     }
 
-    override fun onBackPressed() {
-        if (drawer.isDrawerOpen(GravityCompat.START)) {
-            drawer.closeDrawer(GravityCompat.START)
-        } else {
 
-            super.onBackPressed()
-        }
-    }
 
     private fun setupNavigation() {
 
 
         navController = Navigation.findNavController(this, R.id.fragment_Host)
-        appBarConfiguration = AppBarConfiguration(navController.graph, drawer)
+        appBarConfiguration = AppBarConfiguration(
+            setOf(R.id.FeedListFragment, R.id.HomeFragment), drawer
+        )
 
         setSupportActionBar(toolbar)
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        supportActionBar?.setDisplayShowHomeEnabled(true)
+        //supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        //supportActionBar?.setDisplayShowHomeEnabled(true)
+
 
         setupActionBarWithNavController(navController, appBarConfiguration)
-        navigation_view.setupWithNavController(navController)
         //set the header  view
 
-        val toggle = ActionBarDrawerToggle(
+        /*val toggle = ActionBarDrawerToggle(
             this, drawer, toolbar,
             R.string.open_drawer, R.string.close_drawer
         )
-        navigation_view.setNavigationItemSelectedListener(this)
         drawer.addDrawerListener(toggle)
-        toggle.syncState()
+        toggle.syncState()*/
+
+        navigation_view.let { NavigationUI.setupWithNavController(it, navController) }
+        navigation_view.setNavigationItemSelectedListener(this)
 
 
     }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            R.id.nav_home -> navController.navigate(R.id.HomeFragment)
+            R.id.nav_feed -> navController.navigate(R.id.FeedListFragment)
+        }
+
 
         drawer.closeDrawer(GravityCompat.START)
         return true
@@ -162,6 +163,16 @@ class MainActivity : AppCompatActivity(), HasSupportFragmentInjector, Navigation
 
     override fun supportFragmentInjector(): AndroidInjector<Fragment> {
         return fragmentInjector
+    }
+
+    override fun onBackPressed() {
+        if (drawer.isDrawerOpen(GravityCompat.START)) {
+            drawer.closeDrawer(GravityCompat.START)
+        } else {
+
+            super.onBackPressed()
+        }
+
     }
 
 }

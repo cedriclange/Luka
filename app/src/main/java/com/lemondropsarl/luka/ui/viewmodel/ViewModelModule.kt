@@ -5,6 +5,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.lemondropsarl.luka.di.ViewModelKey
 import com.lemondropsarl.luka.di.factory.LukaViewModelFactory
 import com.lemondropsarl.luka.ui.main.feed.FeedViewModel
+import com.lemondropsarl.luka.ui.main.post.PostViewModel
 import dagger.Binds
 import dagger.Module
 import dagger.multibindings.IntoMap
@@ -13,6 +14,11 @@ import dagger.multibindings.IntoMap
 @Module
 abstract class ViewModelModule {
     //declare all viewModules
+    @Binds
+    @IntoMap
+    @ViewModelKey(PostViewModel::class)
+    abstract fun bindPostViewModel(postViewModel: PostViewModel): ViewModel
+
     @Binds
     @IntoMap
     @ViewModelKey(FeedViewModel::class)

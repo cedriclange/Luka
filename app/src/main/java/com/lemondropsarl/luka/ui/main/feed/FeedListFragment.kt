@@ -1,53 +1,37 @@
 package com.lemondropsarl.luka.ui.main.feed
 
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.ViewModelProviders
 import androidx.paging.PagedList
 import com.firebase.ui.firestore.paging.FirestorePagingOptions
 import com.lemondropsarl.luka.R
 import com.lemondropsarl.luka.data.remote.model.Post
 import com.lemondropsarl.luka.di.Injectable
+import com.lemondropsarl.luka.ui.base.fragment.BaseFragment
 import kotlinx.android.synthetic.main.feed_list_fragment.*
-import javax.inject.Inject
 
-class FeedListFragment : Fragment(), Injectable {
+class FeedListFragment : BaseFragment<FeedViewModel>(), Injectable {
+    override val getLayoutViewRes: Int
+        get() = R.layout.feed_list_fragment
+    override val viewModelClass: Class<FeedViewModel>
+        get() = FeedViewModel::class.java
 
 
-    @Inject
-    lateinit var viewModelFactory: ViewModelProvider.Factory
+    //@Inject
+    //lateinit var viewModelFactory: ViewModelProvider.Factory
     lateinit var model: FeedViewModel
-    //var adapter : FeedListAdapter? = null
+    //private val navController: NavController by lazy { findNavController() }
+    //private val navController: NavController by lazy { findNavController() }
 
-
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-
-        return inflater.inflate(R.layout.feed_list_fragment, container, false)
-
-    }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         //get view model
-        model = ViewModelProviders.of(this, viewModelFactory)
-            .get(FeedViewModel::class.java)
 
-        initSwipeRefresh()
+        //model = ViewModelProviders.of(this, viewModelFactory)
+        //.get(FeedViewModel::class.java)
+        model = getViewModel()
         initFeedRecycler()
     }
-
-    private fun initSwipeRefresh() {
-
-    }
-
 
     private fun initFeedRecycler() {
         //get paging auery
@@ -75,6 +59,9 @@ class FeedListFragment : Fragment(), Injectable {
                 val ds = adapter.getSnapShot(position)
                 val id: String = ds!!.id
                 //apply navigation
+                val action = FeedListFragmentDirections.detail(id)
+                navController.navigate(action)
+
 
             }
         })
