@@ -157,8 +157,10 @@
 
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/feedAuthor" app:layout_constraintStart_toEndOf="@+id/feedAuthorText"
-            android:layout_marginStart="8dp" android:layout_marginBottom="4dp"
+            android:id="@+id/feedAuthor"
+            app:layout_constraintStart_toEndOf="@+id/feedAuthorText"
+            android:layout_marginStart="8dp"
+            android:layout_marginBottom="4dp"
             app:layout_constraintBottom_toBottomOf="@+id/view"/>
     <TextView
             android:text="@string/devise"

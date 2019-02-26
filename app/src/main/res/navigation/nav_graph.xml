@@ -20,13 +20,26 @@
               android:label="@string/feed_detail"
               tools:layout="@layout/feed_detail_fragment">
         <argument android:name="feedId" app:argType="string"/>
-        />
+
     </fragment>
 
     <fragment android:name="com.lemondropsarl.luka.ui.main.home.HomeFragment"
               android:id="@+id/HomeFragment"
               android:label="Home"
               tools:layout="@layout/fragment_home"/>
+
+    <fragment android:id="@+id/PostListFragment"
+              android:name="com.lemondropsarl.luka.ui.main.post.PostListFragment"
+              android:label="@string/my_posts"
+              tools:layout="@layout/post_list_fragment">
+        <action android:id="@+id/add"
+                app:destination="@id/PostAddFragment"/>
+    </fragment>
+
+    <fragment android:id="@+id/PostAddFragment"
+              android:name="com.lemondropsarl.luka.ui.main.post.PostAddFragment"
+              android:label="@string/post_add"
+              tools:layout="@layout/post_add_fragment"/>
 
 
 </navigation>

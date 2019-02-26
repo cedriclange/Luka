@@ -8,6 +8,6 @@ interface FeedService {
     //implement operation to call the database
     fun getPagingQuery(): Query
 
-    fun getFeedById(id: String): Task<DocumentSnapshot>
+    fun getById(id: String): Task<DocumentSnapshot>
 
 }

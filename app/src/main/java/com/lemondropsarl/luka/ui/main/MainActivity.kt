@@ -121,7 +121,8 @@ class MainActivity : AppCompatActivity(), HasSupportFragmentInjector, Navigation
 
         navController = Navigation.findNavController(this, R.id.fragment_Host)
         appBarConfiguration = AppBarConfiguration(
-            setOf(R.id.FeedListFragment, R.id.HomeFragment), drawer
+            setOf(R.id.FeedListFragment, R.id.PostListFragment,
+                R.id.HomeFragment), drawer
         )
 
         setSupportActionBar(toolbar)
@@ -149,6 +150,7 @@ class MainActivity : AppCompatActivity(), HasSupportFragmentInjector, Navigation
         when (item.itemId) {
             R.id.nav_home -> navController.navigate(R.id.HomeFragment)
             R.id.nav_feed -> navController.navigate(R.id.FeedListFragment)
+            R.id.nav_post -> navController.navigate(R.id.PostListFragment)
         }
 
 

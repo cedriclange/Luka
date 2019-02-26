@@ -36,7 +36,7 @@ class FeedDetailFragment : BaseFragment<FeedViewModel>(), Injectable {
             feedTitle.text = feed.title
             feedTown.text = feed.city
             feedArea.text = feed.area
-            feedAuthorText.text = feed.author
+            feedAuthor.text = feed.author
             feedPrice.text = feed.price.toString()
             feedGuaranty.text = feed.guaranty.toString()
             feedRoom.text = feed.rooms.toString()

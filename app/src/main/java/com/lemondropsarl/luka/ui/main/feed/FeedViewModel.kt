@@ -17,7 +17,7 @@ class FeedViewModel @Inject constructor(
     val basicQuery: Query = repo.getPagingQuery()
 
     fun getFeed(id: String): LiveData<Post> {
-        repo.getFeedById(id)
+        repo.getById(id)
             .addOnSuccessListener { document ->
                 var post = document?.toObject(Post::class.java)
                 feed.value = post
