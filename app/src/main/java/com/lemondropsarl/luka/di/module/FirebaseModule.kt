@@ -2,14 +2,13 @@ package com.lemondropsarl.luka.di.module
 
 import com.google.firebase.firestore.CollectionReference
 import com.google.firebase.firestore.FirebaseFirestore
-import com.google.firebase.storage.FirebaseStorage
 import dagger.Module
 import dagger.Provides
 import javax.inject.Named
 import javax.inject.Singleton
-
 @Module
 class FirebaseModule {
+
     @Singleton
     @Provides
     fun provideFirestore(): FirebaseFirestore {
@@ -17,10 +16,7 @@ class FirebaseModule {
         return FirebaseFirestore.getInstance()
     }
 
-    @Singleton
-    @Provides
 
-    fun provideStorage(): FirebaseStorage = FirebaseStorage.getInstance()
 
     @Singleton
     @Provides
@@ -34,5 +30,6 @@ class FirebaseModule {
 
 
 }
+
 
 

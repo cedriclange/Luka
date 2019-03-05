@@ -29,6 +29,8 @@
     <string name="type_post">Type</string>
     <string name="ui_save">Enregistrer</string>
     <string name="ui_cencel">Annuler</string>
+    <string name="type">type</string>
+
     <string-array name="type_post">
         <item>Studio</item>
         <item>Hotel</item>

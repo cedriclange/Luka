@@ -5,13 +5,14 @@ import java.util.*
 
 data class Post(
     var title: String = "",
+    var type: String = "",
     var city: String = "",
     var area: String = "",
     var rooms: Int = 0,
     var price: Double = 0.00,
     var guaranty: Double = 0.00,
     var photoUrl: String = "",
-    var specification: Map<String,Boolean>? = null,
+    var specification: Map<String, Boolean> = HashMap(),
     var author: String = "",
     var isPublished:Boolean = false,
     @ServerTimestamp

@@ -1,7 +1,6 @@
 package com.lemondropsarl.luka.ui.main.post
 
 import android.os.Bundle
-import android.view.View
 import com.firebase.ui.firestore.FirestoreRecyclerOptions
 import com.google.firebase.auth.FirebaseAuth
 import com.lemondropsarl.luka.R
@@ -32,7 +31,7 @@ class PostListFragment : BaseFragment<PostViewModel>(), Injectable {
         //setup recyclerView
         val current = FirebaseAuth.getInstance().currentUser
 
-        val mQuery = model.getQuery(current?.uid!!)
+        val mQuery = model.getQuery(current!!.uid)
 
         val options = FirestoreRecyclerOptions.Builder<Post>()
             .setLifecycleOwner(this)
@@ -40,16 +39,16 @@ class PostListFragment : BaseFragment<PostViewModel>(), Injectable {
             .build()
         val adapter = PostListAdapter(options)
 
-        if (adapter.itemCount == 0){
+        post_list.setHasFixedSize(true)
+        post_list.adapter = adapter
+        /*if (post_list.adapter!!.itemCount == 0){
             post_list.visibility = View.GONE
             emptyView.visibility = View.VISIBLE
         }else{
             post_list.visibility = View.VISIBLE
             emptyView.visibility = View.GONE
-        }
+        }*/
 
-        post_list.hasFixedSize()
-        post_list.adapter = adapter
 
 
     }

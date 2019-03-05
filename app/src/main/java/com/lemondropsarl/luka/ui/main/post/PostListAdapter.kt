@@ -24,6 +24,7 @@ class PostListAdapter(
 
     override fun onBindViewHolder(holder: PostHoler, position: Int, post: Post) {
         holder.bind(post)
+
     }
 
 
@@ -32,9 +33,19 @@ class PostListAdapter(
         fun bind(post: Post){
 
             itemView.postTitle.text = post.title
-            GlideApp.with(itemView.postImage.context)
+            GlideApp.with(itemView.postImage.context!!)
                 .load(post.photoUrl)
                 .into(itemView.postImage)
+            val isPublished = post.isPublished
+
+            if (!isPublished) {
+                itemView.publish_btn.visibility = View.VISIBLE
+                itemView.publishedImage.visibility = View.GONE
+            } else {
+                itemView.publish_btn.visibility = View.GONE
+                itemView.publishedImage.visibility = View.VISIBLE
+
+            }
 
         }
 
