@@ -7,6 +7,7 @@ import com.lemondropsarl.luka.R
 import com.lemondropsarl.luka.data.remote.model.Post
 import com.lemondropsarl.luka.di.Injectable
 import com.lemondropsarl.luka.ui.base.fragment.BaseFragment
+import com.lemondropsarl.luka.utils.OnRecyclerClickListener
 import kotlinx.android.synthetic.main.feed_list_fragment.*
 
 class FeedListFragment : BaseFragment<FeedViewModel>(), Injectable {
@@ -54,10 +55,10 @@ class FeedListFragment : BaseFragment<FeedViewModel>(), Injectable {
         val adapter = FeedListAdapter(options)
 
         feed_list.adapter = adapter
-        adapter.setOnItemClickListener(object : FeedListAdapter.OnItemClickListener {
+        adapter.setOnItemRecyclerClick(object : OnRecyclerClickListener {
             override fun onItemClick(position: Int) {
                 val ds = adapter.getSnapShot(position)
-                val id: String = ds!!.id
+                val id = ds!!.id
                 //apply navigation
                 val action = FeedListFragmentDirections.detail(id)
                 navController.navigate(action)

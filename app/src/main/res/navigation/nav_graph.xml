@@ -17,7 +17,7 @@
 
     <fragment android:id="@+id/FeedDetailFragment"
               android:name="com.lemondropsarl.luka.ui.main.feed.FeedDetailFragment"
-              android:label="@string/feed_detail"
+              android:label="@string/ui_detail"
               tools:layout="@layout/feed_detail_fragment">
         <argument android:name="feedId" app:argType="string"/>
 
@@ -34,12 +34,22 @@
               tools:layout="@layout/post_list_fragment">
         <action android:id="@+id/add"
                 app:destination="@id/PostAddFragment"/>
+        <action android:id="@+id/detail"
+                app:destination="@id/postDetailFragment" app:enterAnim="@anim/fui_slide_out_left"
+                app:exitAnim="@anim/fui_slide_in_right"/>
     </fragment>
 
     <fragment android:id="@+id/PostAddFragment"
               android:name="com.lemondropsarl.luka.ui.main.post.PostAddFragment"
               android:label="@string/post_add"
               tools:layout="@layout/post_add_fragment"/>
+
+    <fragment android:id="@+id/postDetailFragment"
+              android:name="com.lemondropsarl.luka.ui.main.post.PostDetailFragment"
+              android:label="@string/ui_detail"
+              tools:layout="@layout/post_detail_fragment">
+        <argument android:name="postId" app:argType="string"/>
+    </fragment>
 
 
 </navigation>

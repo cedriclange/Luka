@@ -20,6 +20,9 @@ import com.google.android.material.navigation.NavigationView
 import com.google.firebase.auth.FirebaseAuth
 import com.lemondropsarl.luka.R
 import com.lemondropsarl.luka.data.UserModel
+import com.microsoft.appcenter.AppCenter
+import com.microsoft.appcenter.analytics.Analytics
+import com.microsoft.appcenter.crashes.Crashes
 import dagger.android.AndroidInjector
 import dagger.android.DispatchingAndroidInjector
 import dagger.android.support.HasSupportFragmentInjector
@@ -47,11 +50,19 @@ class MainActivity : AppCompatActivity(), HasSupportFragmentInjector, Navigation
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        initAppCenter()
         //setup Navigation
         setupNavigation()
         //Bind User Information
         setupHeader()
 
+    }
+
+    private fun initAppCenter() {
+        AppCenter.start(
+            application!!, getString(R.string.secret),
+            Analytics::class.java, Crashes::class.java
+        )
     }
 
     private fun setupHeader() {

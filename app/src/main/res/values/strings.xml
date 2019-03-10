@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">Luka Ndako</string>
+    <string name="appCenter_secret">578166e2-85d1-42b1-a093-72b6f11dd7ce</string>
     <string name="Dashboard">Acceuil</string>
     <string name="Feed">Feeds</string>
     <string name="my_posts">Liste postes</string>
@@ -11,7 +12,7 @@
     <string name="picture">image profile</string>
     <string name="open_drawer">open drawer</string>
     <string name="close_drawer">close drawer</string>
-    <string name="feed_detail">Details</string>
+    <string name="ui_detail">Details</string>
     <string name="feed_detail_image">feed image detail</string>
     <string name="feed_author">posté par:</string>
     <string name="feed_town">Ville</string>
@@ -30,6 +31,7 @@
     <string name="ui_save">Enregistrer</string>
     <string name="ui_cencel">Annuler</string>
     <string name="type">type</string>
+    <string name="secret">578166e2-85d1-42b1-a093-72b6f11dd7ce</string>
 
     <string-array name="type_post">
         <item>Studio</item>

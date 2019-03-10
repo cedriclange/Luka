@@ -4,10 +4,11 @@ import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 import com.lemondropsarl.luka.data.remote.model.Post
 import com.lemondropsarl.luka.di.module.GlideApp
+import com.lemondropsarl.luka.utils.OnRecyclerClickListener
 import kotlinx.android.synthetic.main.feed_item_row.view.*
 
 class FeedListHolder constructor(
-    itemView: View, private val listener: FeedListAdapter.OnItemClickListener
+    itemView: View, private val listener: OnRecyclerClickListener
 
 ) : RecyclerView.ViewHolder(itemView) {
     companion object {
